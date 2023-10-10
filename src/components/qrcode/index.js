@@ -25,8 +25,8 @@ function Qrcode() {
     </div>
       
       <div className="my-6">
-      <h2 className="font-bold my-4 text-center text-lg tracking-wider">Improve your front-end skills by building projects</h2>
-      <div className="text-center font-light">
+      <h2 className="font-bold my-4 text-center text-lg tracking-wider leading-6">Improve your front-end skills by building projects</h2>
+      <div className="text-center font-light leading-5">
         Scan the QR code to visit Frontend Mentor and take your coding skills to the next level
       </div>
       </div>
