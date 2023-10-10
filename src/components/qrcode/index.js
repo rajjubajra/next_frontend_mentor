@@ -25,17 +25,11 @@ function Qrcode() {
     </div>
       
       <div className="my-6">
-      <h2 className="font-bold my-4 text-center text-xl">Improve your front-end skills by building projects</h2>
+      <h2 className="font-bold my-4 text-center text-lg tracking-wider">Improve your front-end skills by building projects</h2>
       <div className="text-center font-light">
         Scan the QR code to visit Frontend Mentor and take your coding skills to the next level
       </div>
       </div>
-    </div>
-
-    <div className="mt-10 w-full text-center">
-        <Link 
-        className="hover:shadow-md border px-4 py-2 font-ligh text-xs uppercase"
-        href="https://github.com/rajjubajra/next_frontend_mentor/blob/main/src/components/qrcode/index.js">Code</Link>
     </div>
     </div>
   )
