@@ -15,7 +15,7 @@ function Qrcode() {
           errorCorrectionLevel: 'M',
           margin: 1,
           scale: 4,
-          width: 170,
+          width: 165,
           color: {
             dark: '#3B82F6',
             light: '#FFF',
