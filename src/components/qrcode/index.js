@@ -8,14 +8,14 @@ function Qrcode() {
   return (
     <div className="w-full h-screen flex flex-col justify-center items-center">
     <div className="p-4 bg-slate-300 w-[300px] rounded-xl">
-    <div className="w-full bg-blue-500 h-[300px] flex justify-center rounded-xl items-center">
+    <div className="w-full bg-blue-500 h-[280px] flex justify-center rounded-xl items-center">
       <Canvas 
         text={'https://github.com/bunlong/next-qrcode'}
         options={{
           errorCorrectionLevel: 'M',
-          margin: 1,
+          margin: 0,
           scale: 4,
-          width: 165,
+          width: 160,
           color: {
             dark: '#3B82F6',
             light: '#FFF',
