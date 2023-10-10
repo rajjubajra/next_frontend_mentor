@@ -7,8 +7,8 @@ function Qrcode() {
   const {Canvas} = useQRCode();
   return (
     <div className="w-full h-screen flex flex-col justify-center items-center">
-    <div className="p-4 bg-slate-300 w-80 rounded-xl">
-    <div className="w-full bg-blue-500 h-80 flex justify-center rounded-xl items-center">
+    <div className="p-4 bg-slate-300 w-[300px] rounded-xl">
+    <div className="w-full bg-blue-500 h-[300px] flex justify-center rounded-xl items-center">
       <Canvas 
         text={'https://github.com/bunlong/next-qrcode'}
         options={{
