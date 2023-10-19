@@ -1,7 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-
+import Link from 'next/link';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -15,8 +15,28 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className='bg-slate-100'>
+      <body className={inter.className}>
+
+        <div className="w-full flex justify-between md:px-10 px-4 md:my-10 my-4">
+          <nav>
+            <Link href="/">Home</Link>
+          </nav>
+          <div className="md:my-3">  
+          <Link 
+            className="tracking-wide font-light" 
+            href="https://www.frontendmentor.io/profile/rajjubajra"
+            target="_blank">
+              Frontend Mentor Challages
+            </Link>
+          </div>
+        </div>
+
+        <div>
+          {children}
+        </div>
+        
+      </body>
     </html>
   )
 }

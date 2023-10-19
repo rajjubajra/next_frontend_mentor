@@ -1,12 +1,11 @@
 'use client';
 import { useQRCode } from "next-qrcode";
-import Link from "next/link";
 
 function Qrcode() {
 
   const {Canvas} = useQRCode();
+  
   return (
-    <div className="w-full h-screen flex flex-col justify-center items-center">
     <div className="p-4 bg-slate-300 w-[300px] rounded-xl">
     <div className="w-full bg-blue-500 h-[285px] flex justify-center rounded-xl items-center">
       <Canvas 
@@ -30,7 +29,6 @@ function Qrcode() {
         Scan the QR code to visit Frontend Mentor and take your coding skills to the next level
       </div>
       </div>
-    </div>
     </div>
   )
 }

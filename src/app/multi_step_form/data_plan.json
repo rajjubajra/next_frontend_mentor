@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "planId": "Arcade",
+    "rate": 9,
+    "free": "2 months free"
+  },
+  {
+    "id": 2,
+    "planId": "Advance",
+    "rate": 12,
+    "free": "2 months free"
+  },
+  {
+    "id": 3,
+    "planId": "Pro",
+    "rate": 15,
+    "free": "2 months free"
+  }
+]
