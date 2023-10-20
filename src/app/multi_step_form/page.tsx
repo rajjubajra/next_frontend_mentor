@@ -11,6 +11,7 @@ import NextBackButton from './NextBackButton';
 
 
 
+
 type FormData = {
   target: any;
   username: string;
@@ -36,6 +37,8 @@ const INITIAL_DATA: FormData = {
 
 const ThreeStepForm: React.FC = () => {
   
+  
+
   const [data, setData] = useState(INITIAL_DATA);
   //console.log("data : ",data);
 
@@ -107,6 +110,7 @@ useEffect(() => {
     }
 
     return (
+      <div>
       <div className="w-full mt-10  md:flex justify-center items-center">
         
         <form onSubmit={onSubmit}>
@@ -170,6 +174,7 @@ useEffect(() => {
 
 
         </form>
+      </div>
       </div>
     )
 

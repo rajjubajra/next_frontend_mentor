@@ -1,5 +1,5 @@
 import React from 'react';
-
+import bgImage from './assets/images/bg-sidebar-desktop.svg';
 
 
 
@@ -27,11 +27,15 @@ const stepsArr = [
   },
 ];
 
+type StepType = {
+  setCurrentStepIndex: (param: any) => number;
+  currentStepIndex: number;
+}
 
 
-
-const BlockLeft = ({setCurrentStepIndex, currentStepIndex}) => {
+const BlockLeft = ({setCurrentStepIndex, currentStepIndex}: StepType) => {
   return (
+    <div style={{backgroundImage:bgImage}}>
     <ul className='flex md:flex-col md:justify-normal justify-center'>
       {stepsArr && stepsArr.map((item, index) => (
         <li key={item.id} 
@@ -47,6 +51,7 @@ const BlockLeft = ({setCurrentStepIndex, currentStepIndex}) => {
         </li>
       ))}
     </ul>
+    </div>
   )
 }
 
