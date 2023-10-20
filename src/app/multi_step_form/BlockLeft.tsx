@@ -28,7 +28,7 @@ const stepsArr = [
 ];
 
 type StepType = {
-  setCurrentStepIndex: (param: any) => number;
+  setCurrentStepIndex: (param: number) => void;
   currentStepIndex: number;
 }
 
