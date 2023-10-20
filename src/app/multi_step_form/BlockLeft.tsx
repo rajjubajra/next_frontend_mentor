@@ -27,13 +27,13 @@ const stepsArr = [
   },
 ];
 
-type StepType = {
-  setCurrentStepIndex: (param: number) => void;
+interface StepProp {
+  setCurrentStepIndex:(index: number) => void;
   currentStepIndex: number;
 }
 
 
-const BlockLeft = ({setCurrentStepIndex, currentStepIndex}: StepType) => {
+const BlockLeft:React.FC<StepProp> = ({setCurrentStepIndex, currentStepIndex}) => {
   return (
     <div style={{backgroundImage:bgImage}}>
     <ul className='flex md:flex-col md:justify-normal justify-center'>
