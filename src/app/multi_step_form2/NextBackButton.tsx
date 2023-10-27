@@ -1,38 +1,31 @@
 
 type ButtonProps = {
-  currentStepIndex: number;
-  isFirstStep:boolean;
-  isLastStep:boolean;
-  back:() => void;
-  next:() => void;
+  step: number;
+  next: () => void;
+  back: () => void;
+  isLastStep: number;
+  isFirstStep:number;
 }
 
-
-
 function NextBackButton({
-  currentStepIndex, 
-  isFirstStep, 
-  isLastStep, 
-  back, 
-  next
+  next, back, step, isLastStep, isFirstStep
 }: ButtonProps){ 
-
 
 
     return (
       <div className='w-full bg-white h-16 pt-4 px-4'>
-        {!isFirstStep && !isLastStep && (
+        {  step !== isFirstStep && (
           <button 
             className="float-left"
             type="button" 
             onClick={back}>Back</button>
         )}
-        { !isLastStep &&
+        { step !== isLastStep &&
           <button 
             className="float-right border px-4 py-2 rounded-lg bg-blue-900 text-slate-200 font-light text-xs"
             type="submit" 
             onClick={next}>
-            {currentStepIndex + 1 === 4 ? "Confirm" : "Next"}
+            {step === isLastStep ? "Confirm" : "Next"}
           </button>
         }
       </div>

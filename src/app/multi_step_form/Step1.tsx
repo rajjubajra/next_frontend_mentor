@@ -3,7 +3,7 @@ import FormHeading from './FormHeading';
 type UserData = {
   username: string,
   email: string,
-  phone: number,
+  phone: string,
 }
 
 type UserFormProps = UserData & {

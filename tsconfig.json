@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/qrcode/index.tsx", "src/components/qrcode/Qrcode.js", "src/app/multi_step_form/layout.tsx", "src/app/multi_step_form/InputField.tsx", "src/app/multi_step_form/___page.tsx", "src/app/qrcode"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/qrcode/index.tsx", "src/components/qrcode/Qrcode.js", "src/app/multi_step_form/layout.tsx", "src/app/multi_step_form/InputField.tsx", "src/app/multi_step_form/___page.tsx", "src/app/qrcode", "src/app/multi_step_form3/Step1.js", "src/app/multi_step_form3/page.js", "src/app/multi_step_form3/NextBackButton.js"],
   "exclude": ["node_modules"]
 }

@@ -16,18 +16,18 @@ type FormData = {
   target: any;
   username: string;
   email: string;
-  phone: number;
+  phone: string;
   planOption: string;
   billingOption: string;
-  addOns: Array<React.FC[]>;
+  addOns: React.FC[];
 }
 
 
-
 const INITIAL_DATA: FormData = {
+  target: "",
   username:"",
   email:"",
-  phone:0,
+  phone:"",
   planOption:"",
   billingOption:"",
   addOns:[],
@@ -50,7 +50,7 @@ const ThreeStepForm: React.FC = () => {
 
 
   /** Step 2 : States */
-  const [plan, setPlan] = useState('');
+  const [plan, setPlan] = useState('Arcade');
   const [yrmo, setYrmo] = useState("Yearly");
   useEffect(() => {
       return updateFields({planOption: plan});
@@ -61,7 +61,7 @@ const ThreeStepForm: React.FC = () => {
 
 
 /** Step 3 : States */
-const [checkboxValues, setCheckboxValues] = useState<string[]>([]);
+const [checkboxValues, setCheckboxValues] = useState([]);
 useEffect(() => {
   return updateFields({addOns: checkboxValues});
 },[checkboxValues])
@@ -150,12 +150,7 @@ useEffect(() => {
                       back={back}
                       />
                     </div> 
-
-
                 </div>
-
-
-            
             </div>  
 
           </div>

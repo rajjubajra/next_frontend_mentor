@@ -4,6 +4,7 @@ import addOnsData from './data_addons.json';
 
 
 interface CheckboxProps{
+  value: string;
   data: object;
   setCheckboxValues:(param: any) => void;
   checkboxValues: Array<React.FC[]>;

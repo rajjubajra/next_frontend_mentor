@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "planId": "Arcade",
+    "rate_monthy": 9,
+    "rate_yearly": 90,
+    "free": "2 months free",
+    "icon": "/assets/images/icon-arcade.svg"
+  },
+  {
+    "id": 2,
+    "planId": "Advance",
+    "rate_monthy": 12,
+    "rate_yearly": 110,
+    "free": "2 months free",
+    "icon": "/assets/images/icon-advanced.svg"
+  },
+  {
+    "id": 3,
+    "planId": "Pro",
+    "rate_monthy": 15,
+    "rate_yearly": 150,
+    "free": "2 months free",
+    "icon": "/assets/images/icon-pro.svg"
+  }
+]
