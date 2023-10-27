@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react';
 import FormHeading from "./FormHeading";
 
 
-export default function Step1({data, setData}) {
+export default function Step1({data, setData, setValidStep1}) {
 
   const [message, setMessage] = useState({
     name: "3-16 characters, no special characters",
@@ -15,7 +15,15 @@ export default function Step1({data, setData}) {
   const [validEmail, setValidEmail] = useState();
   const [validPhone, setValidPhone] = useState();
 
-
+  
+  /** this is for post validation */
+  useEffect(() => {
+    if(validName && validEmail && validPhone){
+      setValidStep1(true)
+    }else{
+      setValidStep1(false)
+    }
+  },[validEmail, validName, validPhone])
   
 
   

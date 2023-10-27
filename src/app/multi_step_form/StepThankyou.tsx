@@ -1,13 +1,16 @@
-import IconThanks from './assets/images/icon-thank-you.svg';
+
 import Image from 'next/image';
 
 
 
 export const StepThankyou = () => {
+
+  const imgurl = '/assets/images/icon-thank-you.svg';
+
   return (
     <div className="w-full md:h-[500px] h-[400px] flex flex-col justify-center items-center">
       <div>
-        <Image src={IconThanks} width={70} height={70} alt="Thanks" />
+        <Image src={imgurl} width={70} height={70} alt="Thanks" />
       </div>
       <div className='text-center mt-4 px-10'>
         <h3 className='text-2xl font-bold my-5'>Thank You !</h3>

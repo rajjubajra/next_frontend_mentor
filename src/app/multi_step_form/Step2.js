@@ -1,7 +1,4 @@
 import Image from 'next/image';
-import iconArcade from './assets/images/icon-arcade.svg';
-import iconAdvance from './assets/images/icon-advanced.svg';
-import iconPro from './assets/images/icon-pro.svg';
 import FormHeading from './FormHeading';
 import {MdOutlineToggleOff, MdOutlineToggleOn} from 'react-icons/md';
 import dataPlan from './data_plan.json';

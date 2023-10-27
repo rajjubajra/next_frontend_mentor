@@ -1,5 +1,5 @@
 'use client';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
@@ -12,6 +12,11 @@ function MultiStepForm() {
 
   const [step, setStep] = useState(0);
 
+  /** post validation */
+  const [validStep1, setValidStep1] = useState(false);
+
+
+
   const [data, setData] = useState({
     username: '',
     email: '',
@@ -21,14 +26,46 @@ function MultiStepForm() {
     addons: []
   });
 
+
   console.log(data);
 
   const [formData, setFormData] = useState();
   console.log("Form Data: ",formData);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormData({...data, formData});
-    setStep(step + 1)
+
+
+    /** Confirm button checks allValid inputs to post */
+    if(step === 3){
+        if(validStep1 && data.plan){
+          setStep(step + 1)
+        }
+        if(!validStep1){
+          setStep(0)
+        }
+        if(!data.plan){
+          setStep(1)
+        }
+    }
+
+    if(step === 0){
+      validStep1 && setStep(step + 1)
+    }
+    if(step === 1){
+      data.plan && setStep(step + 1)
+    }
+
+    if(step === 2){
+      setStep(step + 1);
+    }
+
+    
+      
+
+    
+
   }
 
   return (
@@ -36,13 +73,13 @@ function MultiStepForm() {
     <div className="w-full mt-10  md:flex justify-center items-center">   
       <form onSubmit={handleSubmit}>
           {/** LEFT BLOCK: Only for Mobile View */}
-          <div className="w-full md:hidden h-[200px] border bg-blue-600">
+          <div className="w-full md:hidden h-[200px] border bg-blue-600 bg-[url('/assets/images/bg-sidebar-mobile.svg')]">
               <BlockLeft step={step} setStep={setStep} />
           </div>
           {/** LEFT AND RIGHT BLOCK: for desktop view */}
           <div className='flex border p-4 rounded-xl md:bg-white bg-slate-100'> 
                {/** LEFT BLOCK: Desktop View */}
-                <div className="hidden md:flex w-60 px-6 py-8 h-[500px] border bg-blue-600 md:rounded-xl">
+                <div className="hidden md:flex w-60 px-6 py-8 h-[500px] border bg-blue-600 md:rounded-xl bg-[url('/assets/images/bg-sidebar-desktop.svg')]">
                   <BlockLeft 
                   step={step}
                   setStep={setStep} />
@@ -50,7 +87,8 @@ function MultiStepForm() {
            {/** RIGHT BLOCK: Desktop and Mobile View */}
           <div className="relative -top-28 md:top-0 md:flex md:w-[600px] md:h-[500px] md:px-20 ">
               <div className="md:w-full bg-white rounded-xl px-4 pb-10 md:p-0 mb:mb-0 mb-20">
-              {step === 0 && <Step1 data={data} setData={setData} />}
+              {step === 0 && <Step1 data={data} setData={setData} 
+              setValidStep1={setValidStep1}  />}
               {step === 1 && <Step2 data={data} setData={setData} />}
               {step === 2 && <Step3 data={data} setData={setData} />}
               {step === 3 && <StepSummary data={data} setStep={setStep} />}
