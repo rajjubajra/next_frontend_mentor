@@ -4,16 +4,10 @@ import stepsArr from './data_steps.json';
 
 
 
-interface StepProp {
-  setStep:(index: number) => void;
-  step: number;
-}
 
 
+const BlockLeft = ({step, setStep}) => {
 
-const BlockLeft:React.FC<StepProp> = ({step, setStep}) => {
-
-  const bgImage = window.location.href + "/assets/images/bg-sidebar-desktop.svg";
 
 
   return (

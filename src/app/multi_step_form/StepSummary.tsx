@@ -83,7 +83,7 @@ const StepSummary: React.FC<StepSummaryProps> = ({ data, setStep }) => {
           <div>
             <h3 className="font-bold">{`${data.plan}(${billingTerm()})`}</h3>
             <span
-            onClick={() => setStep(1)}
+            
             className="font-light underline cursor-pointer"
             >Change</span>
           </div>
