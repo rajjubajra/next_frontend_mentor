@@ -2,7 +2,7 @@
 import {useState, useEffect} from 'react';
 import data from './data.json';
 import CountryListing from './CountyListing'; 
-import Loading from '../Loading';
+import Loading from '../loading';
 
 function CountriesApi() {
 
