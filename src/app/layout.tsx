@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en" className='bg-slate-100'>
       <body className={inter.className}>
 
-        <div className="w-full md:flex justify-between md:px-10 md:my-10 my-4">
+        <div className="w-full md:flex justify-between md:px-10 px-4 md:my-10 my-4">
           <nav>
             <Link href="/">Home</Link>
           </nav>
