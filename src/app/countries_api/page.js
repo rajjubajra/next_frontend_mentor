@@ -1,8 +1,8 @@
 'use client';
 import {useState, useEffect} from 'react';
-import Header from './Header';
 import data from './data.json';
 import CountryListing from './CountyListing'; 
+import Loading from '../Loading';
 
 function CountriesApi() {
 
@@ -56,8 +56,10 @@ function CountriesApi() {
   },[search, selectedOption])
 
 
+  if(!listing) return <Loading />
+
   return (
-    <div>
+    <div className='mx-5'>
       {/** SEARCH AND DROPDOWN FIELD */}
       <div className='w-full md:flex justify-between'>
           <div className='my-10 md:mx-10 flex justify-center'>

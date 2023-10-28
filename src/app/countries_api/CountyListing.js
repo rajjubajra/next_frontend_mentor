@@ -4,13 +4,13 @@ import Link from 'next/link';
 function CountryListing({data}) {
   console.log(data)
   return (
-    <div className='flex gap-10 flex-wrap justify-center'>
+    <div className='flex ml-10 flex-wrap gap-10'>
       {
         data && data.length && data?.map((item, i) => {
           return <Link href={`/countries_api/${item.alpha3Code}`}
-            key={i} className="w-60 h-80 bg-white shadow-sm">
+            key={i} className="w-64 h-80 bg-white shadow-sm">
             <Image 
-            className='w-60 h-36'
+            className='h-36 w-64'
             src={item.flags.svg} width={200} height={100} alt="flags" />
             <div className='p-5'>
             <h3 className='font-bold' >{item.name}</h3>

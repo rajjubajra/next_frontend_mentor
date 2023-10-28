@@ -18,24 +18,24 @@ function CountryDetail({params}) {
 
   const borderCountries = (code) => {
     let des = data?.find((item) => item?.alpha3Code === code )
-    return <span className='px-2 py-1 border mx-1'>{des.name}</span>
+    return <span className='px-2 py-1 border md:mx-1'>{des.name}</span>
   }
 
 
 
   return (
-    <div className='mt-5'>
+    <div className='mt-5 mx-4 md:mx-0'>
       <div className='grid md:grid-cols-2'>
         <div className='flex justify-center'>
           <div>
           <Link className='px-3 py-1 text-xs border' href="/countries_api">Back</Link>
           <Image 
-          className='md:w-96 md:h-60 mt-20'
+          className='md:w-96 md:h-60 w-auto mt-20'
           src={country?.flags?.svg} width={200} height={100} alt="flag" />
           </div>
         </div>
         <div>
-          <h2 className='font-bold mt-32 mb-8 text-lg'>{country?.name}</h2>
+          <h2 className='font-bold md:mt-32 mt-10 mb-8 text-lg'>{country?.name}</h2>
           <div className='w-full flex flex-wrap text-sm'>
             <div className='md:w-1/2'>
               <ul>
@@ -60,7 +60,7 @@ function CountryDetail({params}) {
           </div>
           <div className='my-10 text-sm'>
             <div className='md:flex'>
-              <div className='w-56'>
+              <div className='w-56 md:mb-0 mb-3'>
                 Border Countries:
               </div>
               <div className='flex flex-wrap gap-2'>
@@ -69,8 +69,6 @@ function CountryDetail({params}) {
                   return borderCountries(item);})
               }
               </div>
-            
-            
             </div>
           </div>
         </div>
