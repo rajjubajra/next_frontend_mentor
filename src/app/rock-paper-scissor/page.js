@@ -138,7 +138,7 @@ function RockPaperScessor() {
           </div>
         </div>
       </div>
-      <div className='float-right'>
+      <div className='float-right m-2'>
         <Link 
         className='text-slate-300 text-xs font-light border border-slate-400 px-4 py-1 rounded'
         href="#">Rules</Link>
