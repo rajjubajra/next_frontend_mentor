@@ -5,6 +5,11 @@
 
 
 @layer base{
+
+  body{
+      @apply dark:bg-slate-900 dark:text-slate-500
+  }
+  
   
   main a {
     @apply border h-40 w-40 flex justify-center items-center m-2 hover:shadow-sm hover:bg-white duration-700
