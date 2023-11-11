@@ -1,8 +1,23 @@
+import {useRef, useEffect} from 'react';
 import { bellefair } from '../components/fonts';
+import gsap from 'gsap';
 
-function Text({crewInfo}) {
+function Text({crewInfo, state}) {
+
+  const elementRef = useRef(null);
+
+  useEffect(()=> {
+    const element = elementRef.current;
+
+    gsap.from(element,{duration:1, opacity:0, ease: 'power2.inOut'});
+    gsap.to(element,{duration:1, opacity:1, ease: 'power2.inOut'});
+    
+  },[state])
+
   return (
-    <div className='order-2 md:order-1 lg:text-left text-center '>
+    <div 
+    ref={elementRef}
+    className='order-2 md:order-1 lg:text-left text-center '>
       <div className='uppercase md:text-[32px] text-[16px]  text-slate-400 font-thin lg:mt-20'>
         <span className={bellefair.className}>{crewInfo?.role}</span>
       </div>

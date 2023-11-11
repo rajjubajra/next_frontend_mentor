@@ -28,10 +28,12 @@ function Destination() {
 
 
   return (
-    <div className="bg-[url('/assets/space_tourism/assets/destination/background-destination-desktop.jpg')] bg-cover w-full lg:min-h-screen relative  top-10  z-10 text-white grid lg:grid-cols-2 md:grid-cols-1">
+    <div className="bg-[url('/assets/space_tourism/assets/destination/background-destination-desktop.jpg')] bg-cover w-full lg:min-h-screen 
+    relative sm:-top-24 -top-10
+    z-10 text-white grid lg:grid-cols-2 md:grid-cols-1">
 
       {/** LEFT BLOCK WITH THE TITLE */}
-      <div className='w-full lg:h-screen flex flex-col'>
+      <div className='w-full lg:h-screen flex flex-col  sm:mt-28'>
 
         {/** Image and title on left */}
           <PageTitle />

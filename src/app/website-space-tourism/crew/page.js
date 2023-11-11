@@ -55,7 +55,7 @@ function Crew() {
         <div className='md:w-[458px] grid'>
 
           {/** Text content */}
-          <Text crewInfo={crewInfo} />
+          <Text crewInfo={crewInfo} state={state} />
 
           {/** DOTS */}
           <div className='order-1 md:order-2 lg:my-0 my-4 lg:absolute lg:bottom-20 flex justify-center lg:justify-start'>

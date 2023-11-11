@@ -51,7 +51,7 @@ function Technology() {
         {/** TEXT BOX */}
         <div className='order-3 lg:order-2 w-full flex justify-center
         lg:items-center'>
-          <Text data={data.technology[state]} />
+          <Text data={data.technology[state]} state={state} />
         </div>
 
         {/** IMAGE */}
