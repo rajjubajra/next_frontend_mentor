@@ -3,7 +3,12 @@ import Image from 'next/image';
 function Hammenu() {
   return (
     <div>
-      <Image src="/assets/space_tourism/assets/shared/icon-hamburger.svg" alt="logo" width={40} height={40} />
+      <Image 
+      className='w-[24px] h-[21px]'
+      src="/assets/space_tourism/assets/shared/icon-hamburger.svg" 
+      alt="logo" 
+      width={40} 
+      height={40} />
     </div>
   )
 }

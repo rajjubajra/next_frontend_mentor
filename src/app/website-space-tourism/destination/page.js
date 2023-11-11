@@ -25,24 +25,29 @@ function Destination() {
 
 
   return (
-    <div className="bg-[url('/assets/space_tourism/assets/destination/background-destination-desktop.jpg')] bg-cover w-full min-h-screen relative -top-24 z-10 text-white grid grid-cols-2">
+    <div className="bg-[url('/assets/space_tourism/assets/destination/background-destination-desktop.jpg')] bg-cover w-full lg:min-h-screen relative  top-10  z-10 text-white grid lg:grid-cols-2 md:grid-cols-1">
 
       {/** LEFT BLOCK WITH THE TITLE */}
-      <div className='w-full h-screen flex flex-col justify-center items-center'>
+      <div className='w-full lg:h-screen flex flex-col'>
 
         {/** Image and title on left */}
-          <h2 className='my-5 mb-10 text-2xl uppercase font-thin tracking-widest'>
-          <span className='font-bold text-slate-500'>01</span> Pick your destination
+          <h2 className='my-5 sm:ml-28 md:mb-10 mb-5 text-2xl text-[16px] sm:text-left text-center uppercase font-thin tracking-widest'>
+          <span className='font-bold text-slate-500'>01</span>
+          Pick your destination
           </h2>
-          <Image src={"/assets/space_tourism"+ image} width={400} height={400} alt="planet" />
-
+          <div className='flex justify-center'>
+          <Image 
+          className='sm:w-[300px] w-[170px]'
+          src={"/assets/space_tourism"+ image} width={400} height={400} alt="planet" />
+          </div>
       </div>
 
     {/** RIGHT BLOCK */}
-      <div className='w-full min-h-screen flex justify-center items-center'>
-        <div className='w-[445px] h-[472px] relative 2xl:top-10 md:top-28'>
+      <div className='w-full lg:min-h-screen flex justify-center items-center'>
+        <div className='sm:w-[445px] sm:h-[472px] relative md:top-10 top-5'>
+
         {/** Header Menu */}
-        <div className='flex gap-2 relative'>
+        <div className='flex gap-4 relative lg:justify-start justify-center'>
         {
           data 
           && data?.destinations 
@@ -50,31 +55,39 @@ function Destination() {
           && data?.destinations?.map((item, i)=> {
             return <div key={i} 
                 onClick={() => setState(i)}
-                className={`uppercase mx-2 pb-2 cursor-pointer ${state === i && "border-b-2"}`}>
+                className={`uppercase pb-2 cursor-pointer ${state === i && "border-b-2"}`}>
                   {item.name}
                   </div>
           })
         }
         </div>
+
         {/** body contents */}
-        <div className="relative top-5">
+        <div className='text-center lg:text-left'>
             <div className={bellefair.className}>
-              <h1 className='text-[100px] uppercase'>{name}</h1>
+              <h1 className='sm:text-[100px] text-[56px] uppercase'>{name}</h1>
             </div>
             <div>
-              <div className='font-light' dangerouslySetInnerHTML={{__html: desc }} />
+              <div className='font-light px-6 md:px-0' dangerouslySetInnerHTML={{__html: desc }} />
             </div>
-            <div className='flex gap-20 border-t border-slate-400/50 mt-14'>
+
+            {/** distance and Travel time */}
+            <div className='flex flex-col sm:flex-row md:justify-between lg:justify-start md:px-20 lg:px-0 md:gap-20 gap-5 border-t border-slate-400/50 mt-10 pt-5 sm:h-auto h-80'>
               <div>
                 <p className='text-xs uppercase'>Avg. distance</p>
-                <p className='text-2xl'>{dist}</p>
+                <p className='sm:text-2xl text-[28px] uppercase font-light'>
+                <span className={bellefair.className}>{dist}</span>
+                </p>
               </div>
               <div>
                 <p className='text-xs uppercase'>Est. Travel Time</p>
-                <p className='text-2xl'>{trvTime}</p>
+                <p className='text-2xl uppercase text-[28px]'>
+                <span className={bellefair.className}>{trvTime}</span>
+                </p> 
               </div>
             </div>
         </div>
+
         </div>
       </div>
     </div>
