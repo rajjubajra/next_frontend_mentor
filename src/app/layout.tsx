@@ -6,6 +6,7 @@ import { Inter } from 'next/font/google'
 import Link from 'next/link';
 const inter = Inter({ subsets: ['latin'] })
 import Darkmode from '@/components/darkmode';
+import {Providers} from '../redux/provider';
 
 // export const metadata: Metadata = {
 //   title: 'Create Next App',
@@ -28,7 +29,9 @@ export default function RootLayout({
     <html lang="en" className={mode}>
       <body className={inter.className}>
         <div className='w-full z-50 flex justify-center'>
-          <span onClick={() => setMainmenu(mainmenu ? false : true)} className='px-2.5 cursor-pointer text-yellow-400'>+</span>
+          <span onClick={() => setMainmenu(mainmenu ? false : true)} className='px-2.5 cursor-pointer text-yellow-400'>
+          {mainmenu ? "-" : "+"}
+          </span>
         </div>
         <div className={`${mainmenu ? "md:flex" : "hidden"} w-full justify-between md:px-8 px-4 md:my-10 my-4`}>
           <nav>
@@ -49,7 +52,7 @@ export default function RootLayout({
         </div>
 
         <div>
-          {children}
+         <Providers>{children}</Providers> 
         </div>
         
       </body>

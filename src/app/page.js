@@ -11,6 +11,7 @@ export default function Home() {
       <Link href="/rock-paper-scissor" >Rock Paper<br />Scissor</Link>
       <Link href="/interactive-comments" >Interactive<br />Comments</Link>
       <Link href="/website-space-tourism" >Website<br />Space Tourism</Link>
+      <Link href="/ecommerce-product-page" >Ecommerce<br />Product page</Link>
     </main>
   )
 }
