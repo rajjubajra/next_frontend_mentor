@@ -13,27 +13,27 @@ const menu = [
   {
     "id": 1,
     "title": "Collections",
-    "link": "/",  
+    "link": "/ecommerce-product-page",  
   },
   {
     "id": 2,
     "title": "Men",
-    "link": "/",  
+    "link": "/ecommerce-product-page",  
   },
   {
     "id": 3,
     "title": "Women",
-    "link": "/",  
+    "link": "/ecommerce-product-page",  
   },
   {
     "id": 4,
     "title": "About",
-    "link": "/",  
+    "link": "/ecommerce-product-page",  
   },
   {
     "id": 5,
     "title": "Contact",
-    "link": "/",  
+    "link": "/ecommerce-product-page",  
   }
 ]
 

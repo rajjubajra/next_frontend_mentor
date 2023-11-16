@@ -52,7 +52,7 @@ export default function RootLayout({
         </div>
 
         <div>
-         <Providers>{children}</Providers> 
+          <Providers>{children}</Providers>
         </div>
         
       </body>

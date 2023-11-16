@@ -1,7 +1,7 @@
+"use client";
+import { useDispatch, useSelector } from "react-redux";
+import { increment, decrement } from "../../../../redux/cartSlice";
 import Image from 'next/image';
-import { decrement, increment } from '@/redux/cartSlice';
-import { useSelector, useDispatch } from 'react-redux'
-
 
 
 function ProductDetails({data}) {
@@ -58,7 +58,7 @@ function ProductDetails({data}) {
           className='text-orange-500 cursor-pointer'>-</div>
           <div>0</div>
           <div
-          onClick={() => dispatch(increment())} 
+          onClick={() => dispatch(increment())}
           className='text-orange-500 cursor-pointer'>+</div>
         </div>
 
