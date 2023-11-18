@@ -8,8 +8,8 @@ import { barlowCondensed } from '../fonts';
 import CartIcon from './CartIcon';
 import Cart from '../cart';
 import Link from 'next/link';
-import { useSelector } from 'react-redux';
-
+import { useSelector, useDispatch } from 'react-redux';
+import { cartClose } from '../../reduxSlice/cartSlice.js';
 
 const menu = [
   {
@@ -43,6 +43,8 @@ function Header() {
 
   const [open, setOpen] = useState(false);
   //const [viewCart, setViewCart] = useState(false);
+  const dispatch = useDispatch();
+
 
   const viewCart = useSelector((state) => state.counter.cartView);
   console.log("View Cart", viewCart);
@@ -54,7 +56,9 @@ function Header() {
         <div className='w-full flex justify-between px-2 py-1'>
           {/** Logo and burger menu Icon */}
           <div className='flex gap-4'>
-            <span><MobileMenuIcon  open={open} setOpen={setOpen} /></span>
+            <span onClick={() => dispatch(cartClose())}>
+              <MobileMenuIcon  open={open} setOpen={setOpen} />
+            </span>
             {
               open ? "" : <Link href="/ecommerce-product-page"><span><Logo /></span></Link>
             }
