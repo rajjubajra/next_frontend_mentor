@@ -2,10 +2,11 @@ import Image from 'next/image';
 
 function Logo() {
   return (
-    <div>
+    <div className='sm:w-28'>
       <Image 
-      className='md:w-14 md:h-14 w-10 h-10'
-      src="/assets/space_tourism/assets/shared/logo.svg" alt="logo" width={100} height={100} />
+      className='w-28 h-4'
+      src="/assets/ecommerce/images/logo.svg" 
+      alt="logo"  width={200} height={150} />
     </div>
   )
 }

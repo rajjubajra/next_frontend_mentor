@@ -1,8 +1,8 @@
 "use client";
 import { useDispatch, useSelector } from "react-redux";
-import { increment, decrement } from "../../../../redux/cartSlice";
+import { increment, decrement } from "../../reduxSlice/cartSlice";
 import Image from 'next/image';
-
+import {rateAfterDiscount} from '../../functions/rateAfterDiscount';
 
 function ProductDetails({data}) {
 
@@ -11,11 +11,6 @@ function ProductDetails({data}) {
 
   console.log(count)
 
-  const rateAfterDiscount = (rate, amount) => {
-    const amt = amount * rate /100
-    return amt;
-
-  }
 
   return (
     <div className='my-2 sm:p-12'>
@@ -56,7 +51,7 @@ function ProductDetails({data}) {
           <div 
           onClick={() => dispatch(decrement())}
           className='text-orange-500 cursor-pointer'>-</div>
-          <div>0</div>
+          <div>{count}</div>
           <div
           onClick={() => dispatch(increment())}
           className='text-orange-500 cursor-pointer'>+</div>

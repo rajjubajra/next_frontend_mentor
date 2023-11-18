@@ -1,6 +1,11 @@
 import Image from 'next/image';
+import { setLightBox } from '../../reduxSlice/imageSlice';
+import { useDispatch } from 'react-redux';
 
 function Picture({imageUrl}) {
+
+  const dispatch = useDispatch()
+
   return (
     <div>
 
@@ -16,7 +21,7 @@ function Picture({imageUrl}) {
 
     {/** desktop */}
     <div className='sm:block hidden px-10 pt-10'>
-      <div>
+      <div onClick={() => dispatch(setLightBox())}>
         <Image 
           src={imageUrl} 
           width={600} 

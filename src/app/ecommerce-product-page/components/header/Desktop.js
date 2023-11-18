@@ -1,22 +1,33 @@
 import Link from 'next/link';
 import {useState} from 'react';
-import Image from 'next/image';
+import Logo from '../logo';
+import {cartClose} from '../../reduxSlice/cartSlice';
+import { useDispatch } from 'react-redux';
 
 function Desktop({menu}) {
 
   const [page, setPage] = useState('');
+  const dispatch = useDispatch();
+
+  const navOnClickAction = (item) => {
+    setPage(item);
+    dispatch(cartClose());
+  }
 
   return (
     <div className='md:w-[450px] lg:w-[729px] h-[96px] flex justify-end'>
-      <ul className='flex gap-4 my-8 w-full text-center uppercase'>
-          <Image 
-          className='w-28 h-4 mr-8'
-          src="/assets/ecommerce/images/logo.svg" width={100} height={50} alt='logo' />
+      <ul className='flex gap-5 my-8 w-full text-center uppercase'>
+          <li onClick={() => setPage("/ecommerce-product-page")}
+          className='w-28 h-4'>
+            <Link href="/ecommerce-product-page" className='cursor-pointer w-28 h-4'>
+              <Logo />
+            </Link>
+          </li>
           {
             menu && menu.map((item, i)=> {
               return (
-                <li key={i} onClick={() => setPage(item.link)}>
-                  <Link href={item.link} className={`${page === item.link && "border-b-4"} mr-6 flex text-sm pb-10 hover:border-b-4 border-orange-400`}>
+                <li key={i} onClick={() => navOnClickAction(item.link)}>
+                  <Link href={item.link} className={`${page === item.link && "border-b-4"} flex text-sm pb-10 hover:border-b-4 border-orange-400`}>
                   <span className='tracking-widest'>{item.title}</span>
                   </Link>
                 </li>

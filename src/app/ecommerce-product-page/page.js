@@ -2,7 +2,10 @@
 import {useState} from 'react';
 import ProductImage from './components/productImage';
 import ProductDetails from './components/productDetails';
-import Image from 'next/image';
+import { useSelector, useDispatch } from 'react-redux';
+import { cartClose } from './reduxSlice/cartSlice';
+import LightBoxGallery from './components/lightBoxGallery';
+
 
 
 const  data = [
@@ -40,32 +43,35 @@ function EcommerceProductPage() {
   const [number, setNumber]= useState(0)
   console.log("NUMBER: ",number);
 
+  
+
+  const dispath = useDispatch();
+  const lightbox = useSelector((state ) => state.imageIndex.lightbox);
+
+  //redux toolkit dispath
+  const imageIndex = useSelector((state) => state.imageIndex.index);
+  
   return (
-    <div className="grid sm:grid-cols-2">
+    <>
+    <div 
+    onClick={() => dispath(cartClose())}
+    className="grid sm:grid-cols-2">
       <div>
         <ProductImage 
-          imageUrl={data[0].productImage[number].img} 
+          imageUrl={data[0].productImage[imageIndex].img} 
           setNumber={setNumber}
           number={number}
           length={data[0].productImage.length}
         />
-        <div className='hidden sm:flex gap-7 px-10 pt-5'>
-        {
-          data[0].productImage.map((item, i)=> {
-            return <div key={i}>
-            <Image 
-            src={item.thumbnail} 
-            width={100} height={100} 
-            alt='thumbnail' />
-            </div>
-          })
-        }
-        </div>
       </div>
       <div className='px-3'>
         <ProductDetails data={data[0]} />
       </div>
     </div>
+    <div className={`${lightbox ? "fixed top-0": "hidden"} z-50 w-full min-h-screen`}>
+      <LightBoxGallery />
+    </div>
+    </>
   )
 }
 
