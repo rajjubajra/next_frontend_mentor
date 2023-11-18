@@ -1,6 +1,6 @@
 ## Deployed on Vercel
 
-Check out [Frontendmentor-Challenges](https://next-frontend-mentor-yxzuf9lht-rajjubajra.vercel.app/).
+Check out [Frontendmentor-Challenges](https://www.frontendmentor.io/profile/rajjubajra).
 
 https://vercel.com/rajjubajra/next-frontend-mentor
 
