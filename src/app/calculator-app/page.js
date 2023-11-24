@@ -42,15 +42,25 @@ function CalculatorApp() {
   },[styleState])
 
 
-
-  useEffect(()=> {
-  
-  const toArray = calc && calc.split(/([+\-*/])/);
-  console.log("To Array: ",toArray);
-
+  /** Calculation option NOT used in Result */
+  const [item, setItem] = useState(0);
+  console.log("First cal: ",item);
+      useEffect(()=> {
+      const toArray = calc && calc.split(/([+\-*/])/);
+      console.log("To Array: ",toArray);
+      console.log("lenght", toArray.length);
+      if(toArray.length === 3 && toArray[2] !== ''){
+        const res = toArray.join('')
+        /** removes all the leading 0 "zero" */
+        const newVal = res.replace(/^0+/, '');
+        setItem(eval(newVal)) 
+      }
   },[calc])
+  /** un-used calculation option closed */
 
 
+
+  
   /** final calculation */
   const doCalculate = (str) => {
 
