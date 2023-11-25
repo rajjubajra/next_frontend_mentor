@@ -13,6 +13,7 @@ export default function Home() {
       <Link href="/website-space-tourism" >Website<br />Space Tourism</Link>
       <Link href="/ecommerce-product-page" >Ecommerce<br />Product page</Link>
       <Link href="/calculator-app" >Calculator<br />App</Link>
+      <Link href="/countdown-timer" >Countdown<br />Timer</Link>
     </main>
   )
 }
