@@ -18,7 +18,7 @@ function Card({item}) {
           md:text-3xl font-bold md:w-20 md:h-10 w-16 h-8
           bg-slate-200 border-t border-slate-50/50
           flex justify-center items-center shadow-lg'>
-          <span className='relative md:-top-[1.31rem] -top-[0.98rem]'>{item.counting}</span>
+          <span className='relative md:-top-[1.31rem] -top-[0.98rem] text-slate-600/70'>{item.counting}</span>
           </div>
           {/** left / right bullet */}
           <div className='before:w-3 before:h-3
