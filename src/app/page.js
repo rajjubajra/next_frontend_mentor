@@ -14,6 +14,7 @@ export default function Home() {
       <Link href="/ecommerce-product-page" >Ecommerce<br />Product page</Link>
       <Link href="/calculator-app" >Calculator<br />App</Link>
       <Link href="/countdown-timer" >Countdown<br />Timer</Link>
+      <Link href="/todo-app" >Todo App</Link>
     </main>
   )
 }

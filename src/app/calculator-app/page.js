@@ -44,7 +44,7 @@ function CalculatorApp() {
 
   /** Calculation option NOT used in Result */
   const [item, setItem] = useState(0);
-  console.log("First cal: ",item);
+      //console.log("First cal: ",item);
       useEffect(()=> {
       const toArray = calc && calc.split(/([+\-*/])/);
       console.log("To Array: ",toArray);

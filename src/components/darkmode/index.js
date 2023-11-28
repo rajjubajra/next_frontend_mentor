@@ -1,12 +1,10 @@
 'use client'
-import {useState} from 'react';
 import {BsMoonStars, BsSun} from 'react-icons/bs';
 
 
 function Darkmode({mode, setMode}) {
 
-  
-  
+
   return (
     <div>
       <button 
