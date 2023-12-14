@@ -16,6 +16,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-leagueSpartaner)'],
+        rubik: ['var(--font-rubik)']
       },
     },
   },

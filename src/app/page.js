@@ -16,6 +16,7 @@ export default function Home() {
       <Link href="/countdown-timer" >Countdown<br />Timer</Link>
       <Link href="/todo-app">Todo App</Link>
       <Link href="/room-homepage">Room Homepge</Link>
+      <Link href="/ip-address-tracker">Ip Address<br />Tracker</Link>
     </main>
   )
 }
